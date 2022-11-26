@@ -24,8 +24,12 @@ function saveCurrentTextInput(event) {
 function restTextInput(event) {
   const parsedData = callbackLocalStorage();
   if (parsedData) {
-    feedbackForm[0].value = parsedData[feedbackForm[0].name];
-    feedbackForm[1].value = parsedData[feedbackForm[1].name];
+    if (parsedData[feedbackForm[0].name]) {
+      feedbackForm[0].value = parsedData[feedbackForm[0].name];
+    }
+    if (parsedData[feedbackForm[1].name]) {
+      feedbackForm[1].value = parsedData[feedbackForm[1].name];
+    }
   }
 }
 
